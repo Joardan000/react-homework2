@@ -57,14 +57,14 @@ function MainDealer() {
                     <div className="flex items-center gap-3 mb-4 from-top">
                         <select
                             onChange={filterStatus}
-                            className="font-medium leading-[21px] text-[#1F2937] pr-5 rounded-lg border border-[#E5E7EB] py-2">
+                            className="cursor-pointer font-medium leading-[21px] text-[#1F2937] pr-5 rounded-lg border border-[#E5E7EB] py-2">
                             <option value="Status">Status</option>
                             <option value="Faol">Faol</option>
                             <option value="Faol emas">Faol emas</option>
                         </select>
                         <select
                             onChange={filterAddress}
-                            className="font-medium leading-[21px] text-[#1F2937] pr-5 rounded-lg border border-[#E5E7EB] py-2">
+                            className="cursor-pointer font-medium leading-[21px] text-[#1F2937] pr-5 rounded-lg border border-[#E5E7EB] py-2">
                             <option value="Manzil">Manzil</option>
                             <option value="Toshkent">Toshkent</option>
                             <option value="Samarqand">Samarqand</option>
@@ -76,7 +76,7 @@ function MainDealer() {
                     <div className="dealers rounded-[12px] border border-[#E5E7EB] overflow-hidden bg-white">
                         <div
                             className="p-4 uppercase font-bold text-[12px] leading-4 text-[#374151] bg-[#F9FAFB] flex items-center">
-                            <input className="w-4 h-4 mr-10" type="checkbox"/>
+                            <input className="cursor-pointer w-4 h-4 mr-10" type="checkbox"/>
                             <p className="mr-[166.82px]">Diller nomi</p>
                             <p className="mr-[148.37px]">Mas'ul shaxs</p>
                             <p className="mr-[153.74px]">Manzil</p>
@@ -87,7 +87,7 @@ function MainDealer() {
                             {
                                 data.map(({id, name, contact, phone, address, active}) => (
                                     <div key={id} className="p-4 flex items-center ">
-                                        <input className="w-4 h-4 mr-10" type="checkbox"/>
+                                        <input className="cursor-pointer w-4 h-4 mr-10" type="checkbox"/>
                                         <div className="max-w-[185.89px] w-full mr-12">
                                             <p className="font-medium text-[14px] leading-5 text-[#111827]">{name}</p>
                                             <p className="font-medium text-[12px] text-[#6B7280] leading-4">ID: {id}</p>
