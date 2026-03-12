@@ -48,7 +48,7 @@ function MainDealer() {
                         </div>
                     </div>
                     <div className="bg-white px-6 max-w-full flex rounded-lg from-top border mb-4 border-[#E5E7EB]">
-                        <label className="py-[10px]" for="input">
+                        <label className="cursor-pointer py-[10px]" for="input">
                             <img src={search} alt="search-icon"/>
                         </label>
                         <input onChange={searchFilter} className="w-full py-[10px] border-l pl-[9px]"
