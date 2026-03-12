@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+.sidebar {
+    animation: sidebar 0.7s ease-in-out forwards;
+}
+
+.dealers {
+    animation: dealers 0.7s ease-out forwards;
+}
+
+.mains {
+    animation: main 0.7s ease-in-out forwards;
+}
+
+.from-top {
+    animation: from-top 0.7s ease-in-out forwards;
+}
+
+@keyframes from-top {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    60%{
+        opacity: 0.6;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes main {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dealers {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    60% {
+        opacity: 0.6;
+        transform: translateX(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sidebar {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    60% {
+        opacity: 0.6;
+        transform: translateX(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translatex(0);
+    }
+}
