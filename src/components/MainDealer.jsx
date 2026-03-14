@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 import plus from '../assets/plus.svg'
 import see from '../assets/see.svg'
 import pen from '../assets/pen.svg'
@@ -7,7 +9,6 @@ import unActive from '../assets/unactive.svg'
 import search from '../assets/search.svg'
 
 import {dealers} from "../data/data.js";
-import {useState} from "react";
 
 function MainDealer() {
     const [status, setStatus] = useState("Status")
@@ -80,7 +81,7 @@ function MainDealer() {
 
     return (
         <>
-            <section className="main bg-gray-100 max-w-full w-full overflow-hidden border-l h-screen border-[#E5E7EB]">
+            <section className="main bg-[#F6F6F8] max-w-full w-full overflow-hidden border-l h-screen border-[#E5E7EB]">
                 <div className="p-8">
                     <div className="flex justify-between items-center mb-6 from-top">
                         <p className="font-extrabold text-[30px] leading-[37.5px] -tracking-[0.75px] text-[#111827]">Diller
@@ -224,7 +225,6 @@ function MainDealer() {
                                                 </td>
                                             </tr>
                                         ))
-
                                 )
                             }
                             </tbody>

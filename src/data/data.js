@@ -1,3 +1,8 @@
+import Truck from '../assets/truck.svg'
+import Clock from '../assets/clock.svg'
+import Check from '../assets/check.svg'
+import Canceled from '../assets/canceled.svg'
+
 export const dealers = [
     {
         id: 73456,
@@ -96,3 +101,160 @@ export const dealers = [
         active: false
     },
 ];
+
+export const stats = [
+    {
+        id: 1,
+        label: "Barcha yetkazib berishlar",
+        value: 1420,
+        trend: "+5.2%",
+        trendUp: true,
+        trendLabel: "o'tgan oyga nisbatan",
+        icon: Truck,
+    },
+    {
+        id: 2,
+        label: "Jarayonda",
+        value: 85,
+        trend: "+3",
+        trendUp: true,
+        trendLabel: "bugun qo'shilgan",
+        icon: Clock,
+    },
+    {
+        id: 3,
+        label: "Yetkazilgan",
+        value: 1289,
+        trend: "+8.2%",
+        trendUp: true,
+        trendLabel: "o'tgan oyga nisbatan",
+        icon: Check,
+    },
+    {
+        id: 4,
+        label: "Bekor qilingan",
+        value: 46,
+        trend: "-1.5%",
+        trendUp: false,
+        trendLabel: "o'tgan oyga nisbatan",
+        icon: Canceled,
+    },
+];
+
+export const deliveries = [
+    {
+        id: "#DLV-001254",
+        date: "2024-07-21",
+        jonatuvchi: "Asosiy ombor",
+        qabulQiluvchi: "Diler: Aziz Ahmedov",
+        products: ["Coca-Cola", "Oreo"],
+        quantity: 150,
+        status: "Yetkazilgan",
+    },
+    {
+        id: "#DLV-001253",
+        date: "2024-07-20",
+        jonatuvchi: "Diler: Aziz Ahmedov",
+        qabulQiluvchi: "Do'kon: Korzinka",
+        products: ["Sultan Choy (qora)"],
+        quantity: 50,
+        status: "Yo'lda",
+    },
+    {
+        id: "#DLV-001252",
+        date: "2024-07-20",
+        jonatuvchi: "Asosiy ombor",
+        qabulQiluvchi: "Diler: Sardor Komilov",
+        products: ["Alpen Gold", "Oreo"],
+        quantity: 80,
+        status: "Yetkazilgan",
+    },
+    {
+        id: "#DLV-001251",
+        date: "2024-07-19",
+        jonatuvchi: "Diler: Aziz Ahmedov",
+        qabulQiluvchi: "Do'kon: Makro",
+        products: ["Nestle Sut 1L"],
+        quantity: 200,
+        status: "Bekor qilingan",
+    },
+    {
+        id: "#DLV-001250",
+        date: "2024-07-18",
+        jonatuvchi: "Asosiy ombor",
+        qabulQiluvchi: "Diler: Aziz Ahmedov",
+        products: ["Sultan Choy (yashil)"],
+        quantity: 40,
+        status: "Yetkazilgan",
+    },
+    {
+        id: "#DLV-001249",
+        date: "2024-07-18",
+        jonatuvchi: "Diler: Sardor Komilov",
+        qabulQiluvchi: "Do'kon: Havas",
+        products: ["Coca-Cola"],
+        quantity: 500,
+        status: "Tayyorlanmoqda",
+    },
+    {
+        id: "#DLV-001248",
+        date: "2024-07-17",
+        jonatuvchi: "Asosiy ombor",
+        qabulQiluvchi: "Diler: Sardor Komilov",
+        products: ["Alpen Gold"],
+        quantity: 120,
+        status: "Yetkazilgan",
+    },
+    {
+        id: "#DLV-001247",
+        date: "2024-07-17",
+        jonatuvchi: "Diler: Aziz Ahmedov",
+        qabulQiluvchi: "Do'kon: Korzinka",
+        products: ["Coca-Cola", "Nestle Sut 1L"],
+        quantity: 90,
+        status: "Yo'lda",
+    },
+    {
+        id: "#DLV-001246",
+        date: "2024-07-16",
+        jonatuvchi: "Asosiy ombor",
+        qabulQiluvchi: "Diler: Aziz Ahmedov",
+        products: ["Oreo", "Sultan Choy (qora)"],
+        quantity: 300,
+        status: "Yetkazilgan",
+    },
+    {
+        id: "#DLV-001245",
+        date: "2024-07-16",
+        jonatuvchi: "Diler: Sardor Komilov",
+        qabulQiluvchi: "Do'kon: Makro",
+        products: ["Alpen Gold"],
+        quantity: 60,
+        status: "Bekor qilingan",
+    },
+    {
+        id: "#DLV-001244",
+        date: "2024-07-15",
+        jonatuvchi: "Asosiy ombor",
+        qabulQiluvchi: "Diler: Sardor Komilov",
+        products: ["Coca-Cola"],
+        quantity: 250,
+        status: "Tayyorlanmoqda",
+    },
+    {
+        id: "#DLV-001243",
+        date: "2024-07-15",
+        jonatuvchi: "Diler: Aziz Ahmedov",
+        qabulQiluvchi: "Do'kon: Havas",
+        products: ["Nestle Sut 1L", "Oreo"],
+        quantity: 75,
+        status: "Yetkazilgan",
+    },
+];
+
+export const statusConfig = {
+    "Yetkazilgan": "bg-[#DCFCE7] rounded-[9999px] text-[#166534] font-medium text-[12px] leading-4 w-fit px-[10px] pt-[1px] pb-[2px]",
+    "Yo'lda": "bg-[#DBEAFE] rounded-[9999px] text-[#1E40AF] font-medium text-[12px] leading-4 w-fit px-[10px] pt-[1px] pb-[2px]",
+    "Bekor qilingan": "bg-[#FEE2E2] rounded-[9999px] text-[#991B1B] font-medium text-[12px] leading-4 w-fit px-[10px] pt-[1px] pb-[2px]",
+    "Tayyorlanmoqda": "bg-[#FEF9C3] rounded-[9999px] text-[#854D0E] font-medium text-[12px] leading-4 w-fit px-[10px] pt-[1px] pb-[2px]",
+};

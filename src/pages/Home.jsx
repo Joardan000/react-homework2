@@ -1,11 +1,11 @@
 import Sidebar from "../components/Sidebar.jsx"
-import MainDealer from "../components/MainDealer.jsx"
+import {Outlet} from "react-router-dom";
 
 function Home() {
     return (
         <div className="flex max-w-full h-screen mx-auto justify-between">
             <Sidebar />
-            <MainDealer />
+            <Outlet/>
         </div>
     )
 }

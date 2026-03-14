@@ -24,7 +24,7 @@ body {
     animation: dealers 0.7s ease-out forwards;
 }
 
-.mains {
+.main {
     animation: main 0.7s ease-in-out forwards;
 }
 
