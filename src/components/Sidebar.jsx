@@ -12,9 +12,8 @@ import side7 from '../assets/side7.svg'
 function Sidebar() {
     return (
         <>
-            <section className="sidebar">
-                <div className="flex">
-                    <div className="p-4 max-w-[256px] w-full flex flex-col justify-between h-[900px]">
+            <section className="sidebar relative">
+                <div className="p-4 max-w-[256px] w-full flex flex-col justify-between h-full">
                         <div>
                             <div className="pl-3 flex gap-3 items-center mb-10">
                                 <img src={logo} alt="logo-icon"/>
@@ -72,8 +71,6 @@ function Sidebar() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-[1px] h-[900px] bg-[#E5E7EB]"></div>
-                </div>
             </section>
         </>
     )
