@@ -81,7 +81,7 @@ function MainDealer() {
 
     return (
         <>
-            <section className="main bg-[#F6F6F8] max-w-full w-full overflow-hidden border-l h-screen border-[#E5E7EB]">
+            <section className="main bg-[#F6F6F8] max-w-full w-full overflow-x-hidden overflow-y-auto border-l h-screen border-[#E5E7EB]">
                 <div className="p-8">
                     <div className="flex justify-between items-center mb-6 from-top">
                         <p className="font-extrabold text-[30px] leading-[37.5px] -tracking-[0.75px] text-[#111827]">Diller
@@ -147,10 +147,10 @@ function MainDealer() {
                         }
 
                     </div>
-                    <div className="h-[738px] rounded-[12px] overflow-y-auto overflow-x-hidden">
+                    <div className="h-[745px] rounded-[12px] border overflow-x-hidden border-[#E5E7EB] overflow-y-auto">
                         <table
-                            className="dealers table-fixed rounded-[12px] border border-[#E5E7EB] w-full overflow-hidden bg-white">
-                            <thead className="uppercase font-bold text-[12px] leading-4 text-[#374151] bg-[#F9FAFB]">
+                            className="dealers table-fixed w-full bg-white">
+                            <thead className="sticky top-0 uppercase font-bold text-[12px] leading-4 text-[#374151] bg-[#F9FAFB]">
                             <tr>
                                 <th className="pl-4 text-center py-4 w-1/6">
                                     <div className="flex items-center gap-10">

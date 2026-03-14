@@ -80,7 +80,7 @@ function MainDelivery() {
     return (
         <>
             <section
-                className="main bg-[#F6F6F8] max-w-full w-full overflow-hidden border-l h-screen border-[#E5E7EB]">
+                className="main bg-[#F6F6F8] max-w-full w-full overflow-x-hidden overflow-y-auto border-l h-screen border-[#E5E7EB]">
                 <div className="p-8">
                     <div className="flex items-center justify-between mb-8">
                         <div>
@@ -111,27 +111,29 @@ function MainDelivery() {
                         {mapStats}
                     </div>
 
-                    <div className="p-4 dealers bg-white max-w-full rounded-[12px] shadow-[box-shadow: 0px 1px 2px 0px #0000000D] h-[655px] overflow-y-auto overflow-x-hidden">
-                        <p className="font-bold text-xl leaidng-[25px] -tracking-[0.3px] text-[#111827] mb-6">Barcha yetkazib berishlar</p>
-                        <div className="flex items-center gap-4 mb-4">
-                            <div className="flex items-center w-full rounded-lg border border-[#D1D5DB] py-[7px] px-3">
-                                <img className="mr-[5px]" src={searchDelivery} alt="search-delivery"/>
-                                <input className="w-full" onChange={searchFilter} type="text"/>
-                            </div>
-                            <div className="flex gap-2 w-[94.75px] rounded-lg overflow-x-hidden border pl-[12px] border-[#D1D5DB] py-[11px] justify-center">
-                                <img src={Filter} alt="filter-icon"/>
-                                <select
-                                    onChange={deliveryFilter}
-                                    className="text-base text-[#1F2937]">
-                                    <option value="Filter">Filter</option>
-                                    <option value="ID">ID</option>
-                                    <option value="Dealer">Dealer</option>
-                                    <option value="Do'kon">Do'kon</option>
-                                </select>
-                            </div>
-                            <div className="flex justify-center gap-2 w-[121.63px] rounded-lg border border-[#D1D5DB] py-[9px]">
-                                <img src={Set} alt="set-icon"/>
-                                <p className="text-base text-[#1F2937]">Saralash</p>
+                    <div className="px-4 dealers h-[638px] bg-white max-w-full rounded-[12px] shadow-[box-shadow: 0px 1px 2px 0px #0000000D] overflow-y-auto overflow-x-hidden">
+                        <div className="sticky py-4 top-0 bg-white">
+                            <p className="font-bold text-xl leaidng-[25px] -tracking-[0.3px] text-[#111827] mb-6">Barcha yetkazib berishlar</p>
+                            <div className="flex items-center bg-white gap-4 mb-4 sticky top-0">
+                                <div className="flex items-center bg-white w-full rounded-lg border border-[#D1D5DB] py-[7px] px-3">
+                                    <img className="mr-[5px]" src={searchDelivery} alt="search-delivery"/>
+                                    <input className="w-full" onChange={searchFilter} type="text"/>
+                                </div>
+                                <div className="flex gap-2 w-[94.75px] rounded-lg overflow-x-hidden border pl-[13px] border-[#D1D5DB] py-[11px] justify-center">
+                                    <img src={Filter} alt="filter-icon"/>
+                                    <select
+                                        onChange={deliveryFilter}
+                                        className="text-base text-[#1F2937]">
+                                        <option value="Filter">Filter</option>
+                                        <option value="ID">ID</option>
+                                        <option value="Dealer">Dealer</option>
+                                        <option value="Do'kon">Do'kon</option>
+                                    </select>
+                                </div>
+                                <div className="flex justify-center gap-2 w-[121.63px] rounded-lg border border-[#D1D5DB] py-[9px]">
+                                    <img src={Set} alt="set-icon"/>
+                                    <p className="text-base text-[#1F2937]">Saralash</p>
+                                </div>
                             </div>
                         </div>
                         <table className="w-full">
