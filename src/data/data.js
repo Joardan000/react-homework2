@@ -107,7 +107,7 @@ export const stats = [
         id: 1,
         label: "Barcha yetkazib berishlar",
         value: 1420,
-        trend: "+5.2%",
+        trend: 5.2,
         trendUp: true,
         trendLabel: "o'tgan oyga nisbatan",
         icon: Truck,
@@ -116,7 +116,7 @@ export const stats = [
         id: 2,
         label: "Jarayonda",
         value: 85,
-        trend: "+3",
+        trend: 3,
         trendUp: true,
         trendLabel: "bugun qo'shilgan",
         icon: Clock,
@@ -125,7 +125,7 @@ export const stats = [
         id: 3,
         label: "Yetkazilgan",
         value: 1289,
-        trend: "+8.2%",
+        trend: 8.2,
         trendUp: true,
         trendLabel: "o'tgan oyga nisbatan",
         icon: Check,
@@ -134,7 +134,7 @@ export const stats = [
         id: 4,
         label: "Bekor qilingan",
         value: 46,
-        trend: "-1.5%",
+        trend: 1.5,
         trendUp: false,
         trendLabel: "o'tgan oyga nisbatan",
         icon: Canceled,
@@ -251,6 +251,13 @@ export const deliveries = [
         status: "Yetkazilgan",
     },
 ];
+
+export const options = {
+    dashStatus:["Status","Faol","Faol emas"],
+    dashAddress:["Manzil","Toshkent","Samarqand","Buxoro","Farg'ona","Namangan"],
+    delivery:["Filter","ID","Dealer","Do'kon"]
+}
+
 
 export const statusConfig = {
     "Yetkazilgan": "bg-[#DCFCE7] rounded-[9999px] text-[#166534] font-medium text-[12px] leading-4 w-fit px-[10px] pt-[1px] pb-[2px]",

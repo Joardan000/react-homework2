@@ -1,4 +1,5 @@
 import {useState} from "react";
+import TablePagination from '@mui/material/TablePagination';
 
 import plus from '../assets/plus.svg'
 import see from '../assets/see.svg'
@@ -8,9 +9,11 @@ import Active from '../assets/active.svg'
 import unActive from '../assets/unactive.svg'
 import search from '../assets/search.svg'
 
-import {dealers} from "../data/data.js";
+import {dealers, options} from "../data/data.js";
 
 function MainDealer() {
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(5);
     const [status, setStatus] = useState("Status")
     const [address, setAddress] = useState("Manzil")
     const [searchText, setSearchText] = useState("")
@@ -22,6 +25,15 @@ function MainDealer() {
     const [checkedIds, setCheckedIds] = useState([])
     const [isOpen, setIsOpen] = useState(false)
 
+    const handleChangePage = (event, newPage) => {
+        setPage(newPage);
+    };
+
+    const handleChangeRowsPerPage = (event) => {
+        setRowsPerPage(parseInt(event.target.value, 10));
+        setPage(0);
+    };
+
     const filteredData = data.filter(item => {
         const searchFind = item.name.toLowerCase().includes(searchText.toLowerCase()) || item.contact.toLowerCase().includes(searchText.toLowerCase());
         const statusFind = status === "Status" || item.active === (status === "Faol");
@@ -29,16 +41,27 @@ function MainDealer() {
         return searchFind && statusFind && addressFind;
     });
 
+    const mapStatus = options.dashStatus.map(status => (
+        <option value={status}>{status}</option>
+    ))
+
+    const mapAddress = options.dashAddress.map(address => (
+        <option value={address}>{address}</option>
+    ))
+
     function searchFilter(e) {
         setSearchText(e.target.value)
+        setPage(0)
     }
 
     function filterStatus(e) {
         setStatus(e.target.value)
+        setPage(0)
     }
 
     function filterAddress(e) {
         setAddress(e.target.value)
+        setPage(0)
     }
 
     function deleteDealer(id) {
@@ -81,7 +104,8 @@ function MainDealer() {
 
     return (
         <>
-            <section className="main bg-[#F6F6F8] max-w-full w-full overflow-x-hidden overflow-y-auto border-l h-screen border-[#E5E7EB]">
+            <section
+                className="main bg-[#F6F6F8] max-w-full w-full overflow-x-hidden overflow-y-auto border-l h-screen border-[#E5E7EB]">
                 <div className="p-8">
                     <div className="flex justify-between items-center mb-6 from-top">
                         <p className="font-extrabold text-[30px] leading-[37.5px] -tracking-[0.75px] text-[#111827]">Diller
@@ -105,19 +129,12 @@ function MainDealer() {
                         <select
                             onChange={filterStatus}
                             className="cursor-pointer font-medium leading-[21px] text-[#1F2937] pr-5 rounded-lg border border-[#E5E7EB] py-2">
-                            <option value="Status">Status</option>
-                            <option value="Faol">Faol</option>
-                            <option value="Faol emas">Faol emas</option>
+                            {mapStatus}
                         </select>
                         <select
                             onChange={filterAddress}
                             className="cursor-pointer font-medium leading-[21px] text-[#1F2937] pr-5 rounded-lg border border-[#E5E7EB] py-2">
-                            <option value="Manzil">Manzil</option>
-                            <option value="Toshkent">Toshkent</option>
-                            <option value="Samarqand">Samarqand</option>
-                            <option value="Buxoro">Buxoro</option>
-                            <option value="Farg'ona">Farg'ona</option>
-                            <option value="Namangan">Namangan</option>
+                            {mapAddress}
                         </select>
 
                         {
@@ -147,41 +164,43 @@ function MainDealer() {
                         }
 
                     </div>
-                    <div className="h-[670px] rounded-[12px] border overflow-x-hidden border-[#E5E7EB] overflow-y-auto">
-                        <table
-                            className="dealers table-fixed w-full bg-white">
-                            <thead className="sticky top-0 uppercase font-bold text-[12px] leading-4 text-[#374151] bg-[#F9FAFB]">
-                            <tr>
-                                <th className="pl-4 text-center py-4 w-1/6">
-                                    <div className="flex items-center gap-10">
-                                        <input
-                                            className="cursor-pointer w-4 h-4"
-                                            type="checkbox"
-                                            checked={checkedIds.length === filteredData.length && filteredData.length > 0}
-                                            onChange={(e) => {
-                                                if (e.target.checked) {
-                                                    setCheckedIds(filteredData.map(item => item.id))
-                                                } else {
-                                                    setCheckedIds([])
-                                                }
-                                            }}
-                                        />
-                                        <p>Diller nomi</p>
-                                    </div>
-                                </th>
-                                <th className=" mx-auto justify-center text-center py-4 w-1/6">Mas'ul shaxs</th>
-                                <th className=" mx-auto justify-center text-center py-4 w-1/6">Manzil</th>
-                                <th className=" mx-auto justify-center text-center py-4 w-1/6">Status</th>
-                                <th className=" mx-auto justify-center text-center py-4 w-1/6">Harakatlar</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            {
-                                filteredData.length === 0 ? (
-                                    <div><p className="text-red-500 font-bold text-xl">hech nima juq</p></div>
-                                ):(
-
-                                        filteredData.map(({id, name, contact, phone, address, active}) => (
+                    <div className="rounded-[12px] border overflow-x-hidden border-[#E5E7EB] overflow-y-auto">
+                        {filteredData.length === 0 ? (
+                            <div className="mx-auto bg-white h-[300px] items-center flex"><p className="mx-auto text-red-500 font-bold text-xl">hech nima juq</p></div>
+                        ) : (
+                            <table
+                                className="dealers table-fixed w-full bg-white">
+                                <thead
+                                    className="sticky top-0 uppercase font-bold text-[12px] leading-4 text-[#374151] bg-[#F9FAFB]">
+                                <tr>
+                                    <th className="pl-4 text-center py-4 w-1/6">
+                                        <div className="flex items-center gap-10">
+                                            <input
+                                                className="cursor-pointer w-4 h-4"
+                                                type="checkbox"
+                                                checked={checkedIds.length === filteredData.length && filteredData.length > 0}
+                                                onChange={(e) => {
+                                                    if (e.target.checked) {
+                                                        setCheckedIds(filteredData.map(item => item.id))
+                                                    } else {
+                                                        setCheckedIds([])
+                                                    }
+                                                }}
+                                            />
+                                            <p>Diller nomi</p>
+                                        </div>
+                                    </th>
+                                    <th className=" mx-auto justify-center text-center py-4 w-1/6">Mas'ul shaxs</th>
+                                    <th className=" mx-auto justify-center text-center py-4 w-1/6">Manzil</th>
+                                    <th className=" mx-auto justify-center text-center py-4 w-1/6">Status</th>
+                                    <th className=" mx-auto justify-center text-center py-4 w-1/6">Harakatlar</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {
+                                    filteredData
+                                        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                        .map(({id, name, contact, phone, address, active}) => (
                                             <tr key={id} className="p-4 border-b border-[#E5E7EB]">
                                                 <td className="p-4">
                                                     <div className="flex items-center gap-10">
@@ -219,17 +238,28 @@ function MainDealer() {
                                                 <td>
                                                     <div className="flex justify-center items-center gap-2">
                                                         <img src={see} alt="see-icon"/>
-                                                        <img className="cursor-pointer" onClick={() => findDealer(id)} src={pen} alt="pen-icon"/>
-                                                        <img className="cursor-pointer" onClick={() => deleteDealer(id)} src={remove} alt="remove-icon"/>
+                                                        <img className="cursor-pointer" onClick={() => findDealer(id)}
+                                                             src={pen} alt="pen-icon"/>
+                                                        <img className="cursor-pointer" onClick={() => deleteDealer(id)}
+                                                             src={remove} alt="remove-icon"/>
                                                     </div>
                                                 </td>
                                             </tr>
                                         ))
-                                )
-                            }
-                            </tbody>
-                        </table>
+
+                                }
+                                </tbody>
+                            </table>
+                        )}
                     </div>
+                    <TablePagination
+                        component="div"
+                        count={filteredData.length}
+                        page={page}
+                        onPageChange={handleChangePage}
+                        rowsPerPage={rowsPerPage}
+                        onRowsPerPageChange={handleChangeRowsPerPage}
+                    />
                 </div>
             </section>
         </>

@@ -18,10 +18,10 @@ function Sidebar() {
             <section className="sidebar relative">
                 <div className="p-4 max-w-[256px] w-full flex flex-col justify-between h-full">
                     <div>
-                        <div className="pl-3 flex gap-3 items-center mb-10">
+                        <Link to="/" className="pl-3 flex gap-3 items-center mb-10">
                             <img src={logo} alt="logo-icon"/>
                             <p className="font-bold text-[18px] leading-[23px] -tracking-[0.27px]">DMS Portal</p>
-                        </div>
+                        </Link>
                         <div className="grid grid-cols-1 gap-y-2">
                             <NavLink
                                 to="/"
