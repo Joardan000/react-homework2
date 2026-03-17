@@ -149,11 +149,11 @@ function MainDelivery() {
                                     <input className="w-full" onChange={searchFilter} type="text"/>
                                 </div>
                                 <div
-                                    className="flex gap-2 w-[94.75px] rounded-lg overflow-x-hidden border pl-[13px] border-[#D1D5DB] py-[11px] justify-center">
+                                    className="flex gap-2 w-[94.75px] cursor-pointer rounded-lg overflow-x-hidden border pl-[13px] border-[#D1D5DB] py-[11px] justify-center">
                                     <img src={Filter} alt="filter-icon"/>
                                     <select
                                         onChange={deliveryFilter}
-                                        className="text-base text-[#1F2937] cursor-pointer">
+                                        className="text-base text-[#1F2937]">
                                         {mapOptions}
                                     </select>
                                 </div>
