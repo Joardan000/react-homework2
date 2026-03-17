@@ -152,9 +152,7 @@ function MainDealer() {
                                         value={dealerStatus === null ? "Status" : dealerStatus ? "Faol" : "Faol emas"}
                                         onChange={editStatus}
                                         className="cursor-pointer font-medium leading-[21px] text-[#1F2937] pr-5 rounded-lg border border-[#E5E7EB] py-2">
-                                        <option value="Status">Statusni o'zgartirish</option>
-                                        <option value="Faol">Faol</option>
-                                        <option value="Faol emas">Faol emas</option>
+                                        {mapStatus}
                                     </select>
                                     <button type="submit"
                                             className="cursor-pointer font-medium leading-[21px] text-[#1F2937] bg-white px-5 rounded-lg border border-[#E5E7EB] py-2">submit
