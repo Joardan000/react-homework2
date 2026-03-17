@@ -147,7 +147,7 @@ function MainDealer() {
                         }
 
                     </div>
-                    <div className="h-[745px] rounded-[12px] border overflow-x-hidden border-[#E5E7EB] overflow-y-auto">
+                    <div className="h-[670px] rounded-[12px] border overflow-x-hidden border-[#E5E7EB] overflow-y-auto">
                         <table
                             className="dealers table-fixed w-full bg-white">
                             <thead className="sticky top-0 uppercase font-bold text-[12px] leading-4 text-[#374151] bg-[#F9FAFB]">

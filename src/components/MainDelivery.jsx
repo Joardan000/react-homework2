@@ -111,7 +111,7 @@ function MainDelivery() {
                         {mapStats}
                     </div>
 
-                    <div className="px-4 dealers h-[638px] bg-white max-w-full rounded-[12px] shadow-[box-shadow: 0px 1px 2px 0px #0000000D] overflow-y-auto overflow-x-hidden">
+                    <div className="px-4 dealers h-[601px] bg-white max-w-full rounded-[12px] shadow-[box-shadow: 0px 1px 2px 0px #0000000D] overflow-y-auto overflow-x-hidden">
                         <div className="sticky py-4 top-0 bg-white">
                             <p className="font-bold text-xl leaidng-[25px] -tracking-[0.3px] text-[#111827] mb-6">Barcha yetkazib berishlar</p>
                             <div className="flex items-center bg-white gap-4 mb-4 sticky top-0">
