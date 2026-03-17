@@ -153,7 +153,7 @@ function MainDelivery() {
                                     <img src={Filter} alt="filter-icon"/>
                                     <select
                                         onChange={deliveryFilter}
-                                        className="text-base text-[#1F2937]">
+                                        className="text-base text-[#1F2937] cursor-pointer">
                                         {mapOptions}
                                     </select>
                                 </div>
