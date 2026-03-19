@@ -10,6 +10,7 @@ import unActive from '../assets/unactive.svg'
 import search from '../assets/search.svg'
 
 import {dealers, options} from "../data/data.js";
+import {Title} from "../assets/styles/mainStyle.js";
 
 function MainDealer() {
     const [page, setPage] = useState(0);
@@ -108,8 +109,9 @@ function MainDealer() {
                 className="main bg-[#F6F6F8] max-w-full w-full overflow-x-hidden overflow-y-auto border-l h-screen border-[#E5E7EB]">
                 <div className="p-8">
                     <div className="flex justify-between items-center mb-6 from-top">
-                        <p className="font-extrabold text-[30px] leading-[37.5px] -tracking-[0.75px] text-[#111827]">Diller
-                            ro'yxati</p>
+                        <Title>Diller
+                            ro'yxati
+                        </Title>
                         <div
                             className="flex items-center hover:bg-blue-700 cursor-not-allowed gap-2 py-[6px] justify-center max-w-[197.14px] w-full rounded-lg bg-[#135BEC]">
                             <img src={plus} alt="plus-icon"/>

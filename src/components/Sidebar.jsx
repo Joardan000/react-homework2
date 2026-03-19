@@ -11,6 +11,7 @@ import side7 from '../assets/side7.svg'
 import side1Active from '../assets/side1Active.svg'
 import side3Active from '../assets/side3Active.svg'
 import {Link, NavLink} from "react-router-dom";
+import {SidebarStyle} from "../assets/styles/mainStyle.js";
 
 function Sidebar() {
     return (
@@ -35,16 +36,16 @@ function Sidebar() {
                                 {({isActive}) => (
                                     <>
                                         <img src={isActive ? side1Active : side1} alt="side-icon1"/>
-                                        <p className={`font-medium text-[14px] leading-[21px] ${isActive ? "text-[#135BEC]" : "text-[#475569]"}`}>
+                                        <SidebarStyle isActive={isActive} className={isActive ? "text-[#135BEC]" : "text-[#475569]"}>
                                             Dashboard
-                                        </p>
+                                        </SidebarStyle>
                                     </>
                                 )}
                             </NavLink>
                             <div
                                 className="rounded-lg hover:bg-[#E5E7EB] cursor-not-allowed bg-white flex px-3 py-[10px] items-center gap-3">
                                 <img src={side2} alt="side-icon1"/>
-                                <p className="font-medium text-[14px] leading-[21px] text-[#475569]">Dillerlar</p>
+                                <SidebarStyle>Dillerlar</SidebarStyle>
                             </div>
                             <NavLink
                                 to="delivery"
@@ -57,32 +58,33 @@ function Sidebar() {
                                 {({isActive}) => (
                                     <>
                                         <img src={isActive ? side3Active : side3} alt="side-icon1"/>
-                                        <p className={`font-medium text-[14px] leading-[21px] ${isActive ? "text-[#135BEC]" : "text-[#475569]"}`}>
+                                        <SidebarStyle isActive={isActive} className={isActive ? "text-[#135BEC]" : "text-[#475569]"}>
                                             Ombor va inventarizatsiya
-                                        </p>
+                                        </SidebarStyle>
                                     </>
                                 )}
                             </NavLink>
                             <div
                                 className="rounded-lg bg-white flex px-3 py-[10px] hover:bg-[#E5E7EB] cursor-not-allowed items-center gap-3">
                                 <img src={side4} alt="side-icon1"/>
-                                <p className="font-medium text-[14px] leading-[21px] text-[#475569]">Do'konlar</p>
+                                <SidebarStyle>Do'konlar</SidebarStyle>
                             </div>
                             <div
                                 className="rounded-lg bg-white flex px-3 py-[10px] hover:bg-[#E5E7EB] cursor-not-allowed items-center gap-3">
                                 <img src={side5} alt="side-icon1"/>
-                                <p className="font-medium text-[14px] leading-[21px] text-[#475569]">Savdo va
-                                    to'lovlar</p>
+                                <SidebarStyle>
+                                    Savdo va to'lovlar
+                                </SidebarStyle>
                             </div>
                             <div
                                 className="rounded-lg bg-white flex px-3 py-[10px] hover:bg-[#E5E7EB] cursor-not-allowed items-center gap-3">
                                 <img src={side6} alt="side-icon1"/>
-                                <p className="font-medium text-[14px] leading-[21px] text-[#475569]">Hisobotlar</p>
+                                <SidebarStyle>Hisobotlar</SidebarStyle>
                             </div>
                             <div
                                 className="rounded-lg bg-white flex px-3 py-[10px] hover:bg-[#E5E7EB] cursor-not-allowed items-center gap-3">
                                 <img src={side7} alt="side-icon1"/>
-                                <p className="font-medium text-[14px] leading-[21px] text-[#475569]">Admin</p>
+                                <SidebarStyle>Admin</SidebarStyle>
                             </div>
                         </div>
                     </div>
@@ -90,12 +92,12 @@ function Sidebar() {
                         <div
                             className="rounded-lg bg-white flex px-3 py-[10px] hover:bg-[#E5E7EB] cursor-not-allowed items-center gap-3">
                             <img src={settings} alt="side-icon1"/>
-                            <p className="font-medium text-[14px] leading-[21px] text-[#475569]">Sozlamalar</p>
+                            <SidebarStyle>Sozlamalar</SidebarStyle>
                         </div>
                         <div
                             className="rounded-lg bg-white flex px-3 py-[10px] hover:bg-[#E5E7EB] cursor-not-allowed items-center gap-3">
                             <img src={exit} alt="side-icon1"/>
-                            <p className="font-medium text-[14px] leading-[21px] text-[#475569]">Chiqish</p>
+                            <SidebarStyle>Chiqish</SidebarStyle>
                         </div>
                     </div>
                 </div>

@@ -250,6 +250,24 @@ export const deliveries = [
         quantity: 75,
         status: "Yetkazilgan",
     },
+    {
+        id: "#DLV-002253",
+        date: "2024-07-20",
+        jonatuvchi: "Diler: Aziz Ahmedov",
+        qabulQiluvchi: "Do'kon: Korzinka",
+        products: ["Sultan Choy (qora)"],
+        quantity: 50,
+        status: "Yo'lda",
+    },
+    {
+        id: "#DLV-003253",
+        date: "2024-07-20",
+        jonatuvchi: "Diler: Aziz Ahmedov",
+        qabulQiluvchi: "Do'kon: Korzinka",
+        products: ["Sultan Choy (qora)"],
+        quantity: 50,
+        status: "Yo'lda",
+    },
 ];
 
 export const options = {

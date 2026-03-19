@@ -8,15 +8,14 @@ import searchDelivery from "../assets/search-delivery.svg"
 import Filter from "../assets/filter.svg"
 import Set from "../assets/set.svg"
 
+import Pagination from '@mui/material/Pagination';
+
 import {options, stats, statusConfig} from "../data/data.js";
 import {deliveries} from "../data/data.js";
-import TablePagination from "@mui/material/TablePagination";
+import {Title} from "../assets/styles/mainStyle.js";
 
 function MainDelivery() {
     const [deliveryOption, setDeliveryOption] = useState("Filter")
-
-    const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(5);
 
     const [deliveryData, setDeliveryData] = useState(deliveries);
 
@@ -27,15 +26,6 @@ function MainDelivery() {
     function deliveryFilter(e) {
         setDeliveryOption(e.target.value)
     }
-
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
-
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0);
-    };
 
     function searchFilter(e) {
         if (deliveryOption === "Filter") {
@@ -54,8 +44,23 @@ function MainDelivery() {
             const res = deliveries.filter(d => d.qabulQiluvchi.toLowerCase().includes(e.target.value.toLowerCase()))
             setDeliveryData(res)
         }
-        setPage(0)
     }
+
+    const [page,setPage] = useState(1);
+
+    const row = 4;
+
+    const count = Math.ceil(deliveries.length / row);
+
+
+    const endPage = page * row;
+
+
+    const firstPage = endPage  - row
+
+    const handleChange = (event, value) => {
+        setPage(value);
+    };
 
     const mapStats = stats
         .map(({id, label, value, trend, trendUp, trendLabel, icon}) => (
@@ -82,7 +87,7 @@ function MainDelivery() {
         ))
 
     const mock = deliveryData
-        .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+        .slice(firstPage, endPage)
         .map((d) => (
             <tr
                 key={d.id}
@@ -110,8 +115,8 @@ function MainDelivery() {
                 <div className="p-8">
                     <div className="flex items-center justify-between mb-8">
                         <div>
-                            <p className="font-bold text-3xl leading-[37.5px] -tracking-[0.45px] text-[#111827] mb-1">Yetkazib
-                                berish</p>
+                            <Title className="mb-1">Yetkazib
+                                berish</Title>
                             <p className="text-base text-[#6B7280]">Barcha mahsulot yetkazib berishlarini kuzatib
                                 boring.</p>
                         </div>
@@ -191,15 +196,8 @@ function MainDelivery() {
                                     </table>
                                 )
                             }
+                                <Pagination count={count} onChange={handleChange} />
                         </div>
-                        <TablePagination
-                            component="div"
-                            count={deliveryData.length}
-                            page={page}
-                            onPageChange={handleChangePage}
-                            rowsPerPage={rowsPerPage}
-                            onRowsPerPageChange={handleChangeRowsPerPage}
-                        />
                     </div>
                 </div>
             </section>
